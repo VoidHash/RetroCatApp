@@ -1,4 +1,4 @@
-package com.droidvoid.thecatapp
+package com.voidhash.thecatapp
 
 import org.junit.Test
 

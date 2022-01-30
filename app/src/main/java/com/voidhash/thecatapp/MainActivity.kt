@@ -1,4 +1,4 @@
-package com.droidvoid.thecatapp
+package com.voidhash.thecatapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

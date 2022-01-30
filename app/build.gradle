@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.droidvoid.thecatapp"
+        applicationId "com.voidhash.thecatapp"
         minSdk 21
         targetSdk 31
         versionCode 1
