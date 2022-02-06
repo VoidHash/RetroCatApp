@@ -1,6 +1,6 @@
-package com.voidhash.thecatapp.api
+package com.voidhash.thecatapp.backend.api
 
-import com.voidhash.thecatapp.models.Kitty
+import com.voidhash.thecatapp.backend.models.Kitty
 import retrofit2.Call
 import retrofit2.http.GET
 

@@ -1,4 +1,4 @@
-package com.voidhash.thecatapp.activities
+package com.voidhash.thecatapp.ui.activities
 
 import android.os.Bundle
 import android.util.Log
@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.voidhash.thecatapp.R
-import com.voidhash.thecatapp.adapters.RecyclerAdapter
-import com.voidhash.thecatapp.api.CatAPI
-import com.voidhash.thecatapp.models.Kitty
+import com.voidhash.thecatapp.ui.adapters.RecyclerAdapter
+import com.voidhash.thecatapp.backend.api.CatAPI
+import com.voidhash.thecatapp.backend.models.Kitty
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback

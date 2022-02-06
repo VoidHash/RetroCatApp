@@ -1,4 +1,4 @@
-package com.voidhash.thecatapp.models
+package com.voidhash.thecatapp.backend.models
 
 import android.os.Parcel
 import android.os.Parcelable

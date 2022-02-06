@@ -1,4 +1,4 @@
-package com.voidhash.thecatapp.adapters
+package com.voidhash.thecatapp.ui.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.voidhash.thecatapp.R
-import com.voidhash.thecatapp.models.Kitty
+import com.voidhash.thecatapp.backend.models.Kitty
 import kotlinx.android.synthetic.main.item_view.view.*
 
 class RecyclerAdapter(private var items: List<Kitty>, private val context: Context)
