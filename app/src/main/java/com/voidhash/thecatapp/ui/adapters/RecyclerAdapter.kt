@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.voidhash.thecatapp.R
 import com.voidhash.thecatapp.backend.models.Kitty
+import com.voidhash.thecatapp.ui.listeners.CatClickListener
 import kotlinx.android.synthetic.main.item_view.view.*
 
 class RecyclerAdapter(private var items: List<Kitty>, private val context: Context)
     : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+
+    lateinit var myClickListener: CatClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_view, parent, false)
@@ -20,6 +23,9 @@ class RecyclerAdapter(private var items: List<Kitty>, private val context: Conte
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = items[position]
         holder?.let {
+            it.itemView.setOnClickListener {
+                myClickListener.onCatClickListener(currentItem)
+            }
             it.bindView(currentItem)
         }
     }
