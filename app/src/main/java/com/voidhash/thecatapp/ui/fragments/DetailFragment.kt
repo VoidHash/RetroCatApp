@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.voidhash.thecatapp.R
 import com.voidhash.thecatapp.backend.api.CatAPI
 import com.voidhash.thecatapp.backend.models.Kitty
@@ -83,6 +85,9 @@ class DetailFragment : Fragment() {
         txtTemperament.text = model.temperament
 
         val imgCat: ImageView = imgCat
-        //todo: Use glide to load images
+        Glide.with(this)
+            .load(catModel?.image?.url)
+            .apply(RequestOptions().override(1350, 450))
+            .into(imgCat)
     }
 }

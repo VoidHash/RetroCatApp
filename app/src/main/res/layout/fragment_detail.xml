@@ -28,7 +28,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtBreed"
             tools:src="@tools:sample/avatars" />
@@ -39,11 +38,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Cat Description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgCat" />
+            app:layout_constraintTop_toBottomOf="@+id/imgCat"
+            tools:text="Cat Description" />
 
         <TextView
             android:id="@+id/txtTemperament"
@@ -51,20 +50,20 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Cat Temperament"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/txtDescription"
+            tools:text="Cat Temperament" />
 
         <TextView
             android:id="@+id/txtLifeSpan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Cat Life Span"
             app:layout_constraintStart_toEndOf="@+id/txtOrigin"
-            app:layout_constraintTop_toTopOf="@+id/txtOrigin" />
+            app:layout_constraintTop_toTopOf="@+id/txtOrigin"
+            tools:text="Cat Life Span" />
 
         <TextView
             android:id="@+id/txtOrigin"
@@ -72,10 +71,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Cat Origin"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtTemperament" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTemperament"
+            tools:text="Cat Origin" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
