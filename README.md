@@ -1,5 +1,5 @@
-# TheCatApp
-A cute cat app to learn about [Retrofit](https://square.github.io/retrofit/)
+# The Cat App
+A cute cat app to learn about [**Retrofit**](https://square.github.io/retrofit/)
 
 Retrofit is a type-safe HTTP client for Android and Java. It's a standard and easy tool to consume APIs used by Android developers community
 
