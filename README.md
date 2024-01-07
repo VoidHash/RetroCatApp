@@ -5,8 +5,13 @@ Retrofit is a type-safe HTTP client for Android and Java. It's a standard and ea
 
 This App use [TheCatApi](https://thecatapi.com/) to make requests, check the [docs](https://docs.thecatapi.com/) and get your API Key for free
 
-To make request using Retrofit follow the steps below:
+### Screenshot
 
+![room-room](https://github.com/VoidHash/retro-cat-app/assets/8929413/4a2634da-7667-4f87-a244-24f6fa4011ad)
+
+---
+
+To make request using Retrofit follow the steps below:
 
 **1. Add Retrofit dependencies (build.gradle)**
 ```python
