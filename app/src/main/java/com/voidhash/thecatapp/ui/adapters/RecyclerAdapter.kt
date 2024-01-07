@@ -1,5 +1,6 @@
 package com.voidhash.thecatapp.ui.adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.voidhash.thecatapp.R
 import com.voidhash.thecatapp.backend.models.Kitty
+import com.voidhash.thecatapp.databinding.ItemViewBinding
 import com.voidhash.thecatapp.ui.listeners.CatClickListener
-import kotlinx.android.synthetic.main.item_view.view.*
 
 class RecyclerAdapter(private var items: List<Kitty>, private val context: Context)
     : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
@@ -16,17 +17,19 @@ class RecyclerAdapter(private var items: List<Kitty>, private val context: Conte
     lateinit var myClickListener: CatClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_view, parent, false)
-        return ViewHolder(view)
+        val binding = ItemViewBinding
+            .inflate(LayoutInflater.from(context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentItem = items[position]
-        holder?.let {
-            it.itemView.setOnClickListener {
-                myClickListener.onCatClickListener(currentItem)
+        with(holder) {
+            with(items[position]) {
+                binding.name.text = this.name
+                binding.itemLayout.setOnClickListener {
+                    myClickListener.onCatClickListener(this)
+                }
             }
-            it.bindView(currentItem)
         }
     }
 
@@ -34,16 +37,11 @@ class RecyclerAdapter(private var items: List<Kitty>, private val context: Conte
         return items.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setListItems(newItems: List<Kitty>) {
         items = newItems
         notifyDataSetChanged()
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        fun bindView(item: Kitty) {
-            val name = itemView.name
-            name.text = item.name
-        }
-    }
+    inner class ViewHolder(val binding: ItemViewBinding) : RecyclerView.ViewHolder(binding.root)
 }

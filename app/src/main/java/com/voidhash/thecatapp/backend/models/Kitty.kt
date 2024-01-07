@@ -3,8 +3,11 @@ package com.voidhash.thecatapp.backend.models
 import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parceler
+import kotlinx.parcelize.Parcelize
 
 //model class using classic Parcelable interface
+@Parcelize
 data class Kitty(
 
     @field:SerializedName("id")
@@ -36,30 +39,23 @@ data class Kitty(
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
-        parcel.readParcelable<Image>(Image.javaClass.classLoader)
+        parcel.readParcelable<Image>(Image.CREATOR::class.java.classLoader)
     )
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(id)
-        parcel.writeString(name)
-        parcel.writeString(origin)
-        parcel.writeString(description)
-        parcel.writeString(lifeSpan)
-        parcel.writeString(temperament)
-        parcel.writeParcelable(image,flags)
-    }
+    companion object : Parceler<Kitty> {
 
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<Kitty> {
-        override fun createFromParcel(parcel: Parcel): Kitty {
-            return Kitty(parcel)
+        override fun Kitty.write(parcel: Parcel, flags: Int) {
+            parcel.writeString(id)
+            parcel.writeString(name)
+            parcel.writeString(origin)
+            parcel.writeString(description)
+            parcel.writeString(lifeSpan)
+            parcel.writeString(temperament)
+            parcel.writeParcelable(image,flags)
         }
 
-        override fun newArray(size: Int): Array<Kitty?> {
-            return arrayOfNulls(size)
+        override fun create(parcel: Parcel): Kitty {
+            return Kitty(parcel)
         }
     }
 

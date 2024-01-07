@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.voidhash.thecatapp.R
 import com.voidhash.thecatapp.backend.api.CatAPI
 import com.voidhash.thecatapp.backend.models.Kitty
+import com.voidhash.thecatapp.databinding.FragmentMainBinding
 import com.voidhash.thecatapp.ui.adapters.RecyclerAdapter
 import com.voidhash.thecatapp.ui.listeners.CatClickListener
-import kotlinx.android.synthetic.main.fragment_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,13 +25,15 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainFragment : Fragment(), CatClickListener {
 
     private lateinit var myAdapter: RecyclerAdapter
+    private lateinit var binding: FragmentMainBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        binding = FragmentMainBinding.bind(inflater.inflate(R.layout.fragment_main, container, false))
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,7 +43,7 @@ class MainFragment : Fragment(), CatClickListener {
     }
 
     private fun init(){
-        val rclView: RecyclerView = catRecyclerView
+        val rclView: RecyclerView = binding.catRecyclerView
         val catList = listOf<Kitty>()
         myAdapter = RecyclerAdapter(catList, requireContext())
         myAdapter.myClickListener = this
@@ -87,4 +89,5 @@ class MainFragment : Fragment(), CatClickListener {
         ft.replace(R.id.fragment_content, detail)
         ft.commit()
     }
+
 }
