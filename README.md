@@ -7,7 +7,7 @@ This App use [TheCatApi](https://thecatapi.com/) to make requests, check the [do
 
 ### Screenshot
 
-![room-room](https://github.com/VoidHash/retro-cat-app/assets/8929413/4a2634da-7667-4f87-a244-24f6fa4011ad)
+![retro-cat-app](https://github.com/VoidHash/retro-cat-app/assets/8929413/f9c31564-f533-4f8e-9ca5-684450572350)
 
 ---
 
